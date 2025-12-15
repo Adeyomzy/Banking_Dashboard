@@ -1,156 +1,54 @@
-# 🏦 Banking Dashboard - Customer Analytics & Insights
+# Banking Customer Analytics Dashboard
 
-## 📊 Project Overview
+End-to-end banking analytics project combining Python exploration with a Power BI dashboard. The goal is to profile customers, understand product uptake, assess risk, and surface actionable insights for banking teams.
 
-A comprehensive banking analytics dashboard built with **Power BI** and **Python** to analyze customer demographics, financial behaviors, and banking patterns. This project provides actionable insights into customer segmentation, risk assessment, and revenue optimization for banking institutions.
+## Highlights
+- Power BI dashboard for interactive drill-down across customer segments and products.
+- Python notebook for quick EDA: distributions, missingness, and data quality checks.
+- Clean CSV dataset (~3k rows, 20+ columns) with demographics, products, balances, and risk labels.
+- Lightweight, reproducible setup with pinned Python dependencies.
 
-## ✨ Key Features
+## Repository Layout
+- Data/Banking.csv — raw dataset.
+- analysis.ipynb — Jupyter notebook for exploratory analysis.
+- main.py — placeholder for future automation/scripts.
+- requirements.txt — Python dependencies.
 
-- **Customer Demographics Analysis**: Age distribution, location, and nationality insights
-- **Financial Product Analysis**: Credit cards, loans, deposits, and account types
-- **Risk Assessment**: Customer risk weighting and classification
-- **Loyalty Segmentation**: Customer loyalty tiers (Jade, Gold, Silver, Platinum)
-- **Revenue Analytics**: Income patterns, fee structures, and profitability metrics
-- **Interactive Dashboard**: Power BI visualizations with drill-down capabilities
+## Data Notes
+- 3,000+ customer records with demographics (age, location, occupation, gender) and product usage (credit cards, loans, deposits, checking/savings, FX, business lending).
+- Financial metrics: estimated income, balances, properties owned, superannuation savings, fee structure.
+- Labels include loyalty tier (Jade/Gold/Silver/Platinum) and risk weighting.
 
-## 📁 Project Structure
+## Quickstart (Python)
+1) Create a virtual environment (recommended):
+   - Windows: `python -m venv .venv && .venv\Scripts\activate`
+   - macOS/Linux: `python -m venv .venv && source .venv/bin/activate`
+2) Install deps: `pip install -r requirements.txt`
+3) Launch notebook: `jupyter notebook analysis.ipynb`
 
-```
-Banking_Dashboard/
-├── Data/
-│   └── Banking.csv              # Dataset with 3,000+ customer records
-├── Banking Dashboard (2025).pbix # Power BI dashboard file
-├── analysis.ipynb               # Jupyter notebook for data exploration
-├── requirements.txt             # Python dependencies
-└── README.md                    # Project documentation
-```
+## Quickstart (Power BI)
+1) Open the Power BI report file (`Banking Dashboard (2025).pbix` if available) in Power BI Desktop.
+2) Ensure the data source points to `Data/Banking.csv`. If prompted, set the file path to this repository location.
+3) Refresh the model and interact with the visuals (drill-down, slicers for loyalty tiers, products, regions, and risk levels).
 
-## 📈 Dataset Features
+## Notebook Walkthrough
+- Load data, inspect schema, and review column summaries.
+- Visualize age distribution and key product uptake patterns.
+- Check missing values and basic data quality signals before modeling or BI.
 
-The dataset contains **3,000+ banking customer records** with 24+ features including:
+## Ideas for Extension
+- Churn and cross-sell propensity models using scikit-learn or LightGBM.
+- Customer lifetime value estimation segmented by loyalty tier and risk.
+- Anomaly and fraud-style monitoring using transaction or balance deltas.
+- Automated data refresh scripts in `main.py` to feed the BI model.
 
-- **Demographics**: Age, Location, Nationality, Occupation, Gender
-- **Account Information**: Client ID, Join Date, Banking Contact
-- **Financial Products**: 
-  - Credit Cards & Balances
-  - Bank Loans & Deposits
-  - Checking & Savings Accounts
-  - Foreign Currency Accounts
-  - Business Lending
-- **Financial Metrics**:
-  - Estimated Income
-  - Superannuation Savings
-  - Properties Owned
-  - Fee Structure
-- **Customer Classification**:
-  - Loyalty Classification (Jade, Gold, Silver, Platinum)
-  - Risk Weighting
-  - Industry Association ID
+## Tech Stack
+- Python 3.13, pandas, numpy, matplotlib, seaborn, Jupyter.
+- Power BI Desktop for dashboarding.
 
-## 🛠️ Technologies Used
+## Contributing
+Issues and pull requests are welcome. Please include a concise description, reproduction steps, and screenshots for dashboard changes when possible.
 
-- **Power BI Desktop**: Interactive dashboard and visualizations
-- **Python 3.13**: Data analysis and preprocessing
-- **Libraries**:
-  - `pandas 2.3.3` - Data manipulation
-  - `numpy 2.3.5` - Numerical computing
-  - `matplotlib 3.10.7` - Data visualization
-  - `seaborn 0.13.2` - Statistical visualizations
-  - `jupyter` - Interactive analysis
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Power BI Desktop (for viewing `.pbix` file)
-- Python 3.13 or higher
-- Git
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Adeyomzy/Banking_Dashboard.git
-   cd Banking_Dashboard
-   ```
-
-2. **Set up Python virtual environment**
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate  # Windows
-   # or
-   source .venv/bin/activate  # macOS/Linux
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Launch Jupyter Notebook**
-   ```bash
-   jupyter notebook analysis.ipynb
-   ```
-
-5. **Open Power BI Dashboard**
-   - Open `Banking Dashboard (2025).pbix` in Power BI Desktop
-
-## 📊 Analysis Insights
-
-### Customer Segmentation
-- Distribution across loyalty tiers
-- Age group analysis (21-81 years)
-- Geographic distribution patterns
-
-### Financial Performance
-- Average customer income: ~$150K
-- Credit card usage patterns
-- Loan and deposit analysis
-
-### Risk Management
-- Risk weighting distribution
-- High-value customer identification
-- Portfolio diversification metrics
-
-## 📝 Jupyter Notebook Analysis
-
-The `analysis.ipynb` notebook includes:
-- Data loading and exploration
-- Statistical summaries
-- Age distribution analysis
-- Missing data assessment
-- Data quality checks
-
-## 🎯 Use Cases
-
-- **Bank Management**: Customer behavior insights and strategic planning
-- **Marketing Teams**: Targeted campaigns based on customer segments
-- **Risk Analysts**: Portfolio risk assessment and mitigation
-- **Product Managers**: Product performance and optimization
-- **Data Analysts**: Exploratory data analysis and reporting
-
-## 📸 Dashboard Preview
-
-> Open `Banking Dashboard (2025).pbix` to explore interactive visualizations
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Adeyomzy/Banking_Dashboard/issues).
-
-## 📄 License
-
-This project is available for educational and portfolio purposes.
-
-## 👤 Author
-
-**Adeyomzy**
-- GitHub: [@Adeyomzy](https://github.com/Adeyomzy)
-
-## 📧 Contact
-
-For questions or collaboration opportunities, please reach out via GitHub.
-
----
-
-⭐ **Star this repository** if you find it helpful!
+## License
+This project is intended for educational and portfolio use. Add a specific license if you plan to distribute or commercialize.
 
